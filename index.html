@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../mesto/pages/index.css">
+    <title>Mesto</title>
+</head>
+
+<body class="page">
+    <header class="header section__size">
+        <img src="../mesto/images/logo.svg" alt="логотип" class="header__logo">
+    </header>
+    <main class="section__size">
+        <section class="profile">
+            <img src="../mesto/images/avatar.jpg" alt="аватар" class="profile__avatar">
+            <div class="profile__info">
+                <h1 class="profile__info_name">Жак-Ив Кусто</h1>
+                <p class="profile__info_description">Исследователь океана</p>
+                <button class="profile__info_edit-button"></button>
+            </div>
+            <button class="profile__add-button"></button>
+        </section>
+        <section class="elements">
+            <div class="element">
+                <img src="../mesto/images/dombaj.jpg" alt="Домбай" class="element__image">
+                <h2 class="element__title">Домбай</h2>
+                <button class="element__button"></button>
+            </div>
+            <div class="element">
+                <img src="../mesto/images/karachaevo-cherkesiya.jpg" alt="Карачаевск" class="element__image">
+                <h2 class="element__title">Карачаевск</h2>
+                <button class="element__button"></button>
+            </div>
+            <div class="element">
+                <img src="../mesto/images/elbrus.jpg" alt="Эльбрус" class="element__image">
+                <h2 class="element__title">Эльбрус</h2>
+                <button class="element__button"></button>
+            </div>
+            <div class="element">
+                <img src="../mesto/images/dombaj.jpg" alt="Домбай" class="element__image">
+                <h2 class="element__title">Горы Домбай</h2>
+                <button class="element__button"></button>
+            </div>
+            <div class="element">
+                <img src="../mesto/images/karachaevo-cherkesiya.jpg" alt="Карачаево-Черкессия" class="element__image">
+                <h2 class="element__title">Карачаево-Черкессия</h2>
+                <button class="element__button"></button>
+            </div>
+            <div class="element">
+                <img src="../mesto/images/elbrus.jpg" alt="Эльбрус" class="element__image">
+                <h2 class="element__title">Гора Эльбрус</h2>
+                <button class="element__button"></button>
+            </div>
+        </section>
+        <section class="popup">
+            <div class="popup__container">
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <input type="text" class="popup__name" placeholder="Имя" value="Жак-Ив Кусто">
+                <input type="text" class="popup__description" placeholder="O себе" value="Исследователь океана">
+                <button class="popup__button-submit">Сохранить</button>
+                <button class="popup__button-close"></button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer section__size">
+        <p class="footer__copyright">© 2020 Mesto Russia</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.profile__info {
+  display: grid;
+  margin: 22px auto 25px 30px;
+  gap: 10px 18px;
+}
+
+@media (max-width: 768px) {
+  .profile__info {
+    gap: 14px 10px;
+    justify-items: center;
+    margin: 22px auto 36px;
+  }
+}

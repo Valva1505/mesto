@@ -1,0 +1,13 @@
+.element__button {
+    width: 22px;
+    height: 19px;
+    background-image: url('../../../images/like.svg');
+    background-color: white;
+    margin: 30px 20px 28px 0px;
+    border: none;
+}
+
+.element__button:hover {
+    opacity: 0.5;
+    cursor: url('../../../images/cursor.svg'), pointer;
+}
