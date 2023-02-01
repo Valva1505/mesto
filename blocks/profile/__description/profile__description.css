@@ -1,4 +1,4 @@
-.profile__info_description {
+.profile__description {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 800px) {
-    .profile__info_description {
+    .profile__description {
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;

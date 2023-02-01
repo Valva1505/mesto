@@ -1,4 +1,4 @@
-const openButton = document.querySelector(".profile__info_edit-button");
+const openButton = document.querySelector(".profile__edit-button");
 const popup = document.querySelector(".popup");
 const closeButton = popup.querySelector(".popup__button-close");
 
@@ -26,8 +26,8 @@ popup.addEventListener("click", handleOverlyClick);
 
 
 let submitButton = document.querySelector(".popup__button-submit");
-let profileName = document.querySelector(".profile__info_name");
-let profileDescription = document.querySelector(".profile__info_description");
+let profileName = document.querySelector(".profile__name");
+let profileDescription = document.querySelector(".profile__description");
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
