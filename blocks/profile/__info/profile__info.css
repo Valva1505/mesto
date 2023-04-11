@@ -6,8 +6,8 @@
 
 @media (max-width: 768px) {
   .profile__info {
-    gap: 14px 10px;
-    justify-items: center;
-    margin: 22px auto 36px;
+    gap: 8px 10px;
+    margin: 22px 0px 34px;
+    grid-template-columns: 18px 1fr 18px;
   }
 }

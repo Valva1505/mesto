@@ -6,6 +6,11 @@
   gap: 20px 17px;
 }
 
+@media (max-width: 768px) {
+  .elements {
+    justify-items: center;
+  }
+}
 
 @media (max-width: 540px) {
   .elements {

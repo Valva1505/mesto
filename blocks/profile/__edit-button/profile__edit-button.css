@@ -13,13 +13,15 @@
 
 .profile__edit-button:hover {
     opacity: 0.6;
-    cursor: url('../../../images/cursor.svg'), pointer;
+    cursor: pointer;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .profile__edit-button {
+        background-size: 7px;
         width: 18px;
         height: 18px;
-        margin: auto 0px;
+        grid-column-start: 3;
+        margin-top: 10px;
     }
 }

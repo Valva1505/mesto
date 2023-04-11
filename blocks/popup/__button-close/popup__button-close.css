@@ -7,11 +7,12 @@
     right: -40px;
     border: none;
     background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
 }
 
 .popup__button-close:hover {
     opacity: 0.6;
-    cursor: url('../../../images/cursor.svg'), pointer;
+    cursor: pointer;
 }
 
 @media (max-width: 540px) {

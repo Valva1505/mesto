@@ -1,9 +1,11 @@
 .element {
     width: 100%;
+    max-width: 282px;
     background-color: white;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+    position: relative;
     flex-wrap: wrap;
     box-sizing: border-box;
     color: black;
