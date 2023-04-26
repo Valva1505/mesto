@@ -1,10 +1,10 @@
 import './index.css'
-import FormValidator from './FormValidator.js';
-import Card from './Card.js';
-import Section from './Section.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWitnForm from './PopupWithform.js';
-import UserInfo from './UserInfo.js';
+import FormValidator from '../components/FormValidator';
+import Card from '../components/Card.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWitnForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
 //  массив
 const initialCards = [
   {
@@ -75,28 +75,21 @@ const cards = new Section({
   elements);
 cards.renderItems();
 //обмен информации пользователя
-const userInfo = new UserInfo({ nameSelector: '.profile__name', descriptionSelector: '.profile__description'});
+const userInfo = new UserInfo({ name: '.profile__name', description: '.profile__description'});
 //попап данных
-const popupInfo = new PopupWitnForm(popupUserInfo, ({}) => {
-  userInfo.setUserInfo({
-    name: nameInput.value, 
-    description: jobInput.value});
+const popupInfo = new PopupWitnForm(popupUserInfo, ({name, description}) => {
+  userInfo.setUserInfo({name, description});
 })
 openButtonInfo.addEventListener('click', () => {
   popupInfo.openPopup();
   formValiatorUserInfo.resetInputErrors();
- const {name, description } = userInfo.getUserInfo();
- nameInput.value = name; 
- jobInput.value = description;
+  popupInfo.setInputValues(userInfo.getUserInfo());
 });
 popupInfo.setEventListeners();
 
 // попап картинки
-const popupNewImage = new PopupWitnForm(popupNewCard, () => {
-  cards.addItem(createCard({
-    name: newCardTitle.value,
-    link: newCardLink.value
-  }))
+const popupNewImage = new PopupWitnForm(popupNewCard, ({name, link}) => {
+  cards.addItem(createCard({name, link}))
 })
 openButtonNewCard.addEventListener('click', () => {
   popupNewImage.openPopup();

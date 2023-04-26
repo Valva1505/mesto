@@ -1,21 +1,27 @@
 import Popup from "./Popup.js";
 export default class PopupWitnForm extends Popup {
-    constructor(popupSelector, submit) {
-        super(popupSelector);
+    constructor(popup, submit) {
+        super(popup);
         this._submit = submit;
-        this._form = popupSelector.querySelector('.popup__form');
-        this._inputList = popupSelector.querySelectorAll('.popup__input');
+        this._form = popup.querySelector('.popup__form');
+        this._inputList = popup.querySelectorAll('.popup__input');
     }
 
 
     _getInputValues() {
-        
+
         this._formValues = {};
         this._inputList.forEach(input => {
-          this._formValues[input.name] = input.value;
+            this._formValues[input.name] = input.value;
         });
         return this._formValues;
-      }
+    }
+
+    setInputValues(data) {
+        this._inputList.forEach(input => {
+            input.value = data[input.name];
+        });
+    }
 
     setEventListeners() {
         super.setEventListeners();
@@ -23,7 +29,6 @@ export default class PopupWitnForm extends Popup {
             evt.preventDefault();
             this._submit(this._getInputValues());
             super.closePopup();
-            this._form.reset();
         });
 
     }
