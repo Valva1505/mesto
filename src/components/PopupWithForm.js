@@ -3,6 +3,7 @@ export default class PopupWitnForm extends Popup {
     constructor(popup, submit) {
         super(popup);
         this._submit = submit;
+        this._buttonsubmit = popup.querySelector('.popup__button-submit');
         this._form = popup.querySelector('.popup__form');
         this._inputList = popup.querySelectorAll('.popup__input');
     }
@@ -22,6 +23,13 @@ export default class PopupWitnForm extends Popup {
             input.value = data[input.name];
         });
     }
+    renderLoading(isLoading) {
+        if (isLoading) {
+          this._buttonsubmit.textContent = "Сохранение...";
+        } else {
+            this._buttonsubmit.textContent = "";
+        }
+      }
 
     setEventListeners() {
         super.setEventListeners();
