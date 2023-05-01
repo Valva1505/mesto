@@ -32,10 +32,10 @@ const formSubmitNewCard = document.querySelector('.popup__form_new-card');
 const popupDelete = document.querySelector('.popup_delete');
 const popupAvatar = document.querySelector('.popup_avatar');
 const formAvatar = document.querySelector('.popup__form_avatar');
-const openButtonAvatar = document.querySelector('.profile__avatar_button');
+const openButtonAvatar = document.querySelector('.profile__avatar-button');
 
 //обмен информации пользователя
-const userInfo = new UserInfo({ name: '.profile__name', about: '.profile__description', avatar: '.profile__avatar_image' });
+const userInfo = new UserInfo({ name: '.profile__name', about: '.profile__description', avatar: '.profile__avatar-image' });
 Promise.all([api.getUserInfo(), api.getInitialCards()])
   .then(([userData, initialCards]) => {
     userInfo.setUserInfo(userData);
