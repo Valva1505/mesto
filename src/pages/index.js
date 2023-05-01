@@ -87,7 +87,7 @@ const popupNewAvatar = new PopupWitnForm(popupAvatar, ({ avatar }) => {
   popupNewAvatar.renderLoading(true);
   api.userAvatar({ avatar })
     .then(res => {
-      avatarInfo.setUserInfo(res);
+      userInfo.setUserInfo(res);
       popupNewAvatar.closePopup();
     })
     .finally(() => {
@@ -101,11 +101,11 @@ openButtonAvatar.addEventListener('click', () => {
   formValiatorNewAvatar.resetInputErrors()
 });
 //попап данных
-const popupInfo = new PopupWitnForm(popupUserInfo, ({ name, about }) => {
+const popupInfo = new PopupWitnForm(popupUserInfo, (data) => {
   popupInfo.renderLoading(true);
-  api.userInfo({ name, about })
-    .then(({ name, about }) => {
-      userInfo.setUserInfo({ name, about });
+  api.userInfo(data)
+    .then((data) => {
+      userInfo.setUserInfo(data);
       popupInfo.closePopup();
     })
     .finally(() => {
