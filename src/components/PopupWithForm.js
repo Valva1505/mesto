@@ -25,11 +25,11 @@ export default class PopupWitnForm extends Popup {
 
     renderLoading(isLoading) {
         if (isLoading) {
-          this._buttonSubmit.textContent = "Сохранение...";
+            this._buttonSubmit.textContent = "Сохранение...";
         } else {
             this._buttonSubmit.textContent = this._buttonSubmitText;
         }
-      }
+    }
 
     setEventListeners() {
         super.setEventListeners();
@@ -39,7 +39,7 @@ export default class PopupWitnForm extends Popup {
             super.closePopup();
         });
     }
-    
+
     closePopup() {
         this._form.reset();
         super.closePopup();

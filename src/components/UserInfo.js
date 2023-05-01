@@ -5,7 +5,7 @@ export default class UserInfo {
         this._avatar = document.querySelector(avatar);
     }
     getUserInfo() {// при открытии
-        return  {
+        return {
             name: this._name.textContent,
             about: this._about.textContent,
             avatar: this._avatar.src,

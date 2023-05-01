@@ -18,7 +18,6 @@
                 <img src="" alt="аватар" class="profile__avatar_image">
                 <button class="profile__avatar_button"></button>
             </div>
-
             <div class="profile__info">
                 <h1 class="profile__name"></h1>
                 <button type="button" class="profile__edit-button"></button>
@@ -98,7 +97,12 @@
     <section class="popup popup_delete">
         <div class="popup__container">
             <h3 class="popup__title">Вы уверены?</h3>
-            <button type="submit" class="popup__button-submit popup__button-submit_delete">Да</button>
+            <form action="#" class="popup__form popup__form_dlete" method="delete" name="delete" novalidate>
+                <fieldset class="popup__set">
+                    <button type="submit" class="popup__button-submit popup__button-submit_delete">Да</button>
+                </fieldset>
+            </form>
+
             <button type="button" class="popup__button-close"></button>
         </div>
     </section>
@@ -114,7 +118,7 @@
             <img src="#" alt="ваше фото" class="element__image">
             <h2 class="element__title"></h2>
             <div class="element__like">
-                <button type="button" class="element__button" id ="likes" name="likes"></button>
+                <button type="button" class="element__button" id="likes" name="likes"></button>
                 <p class="element__likes">0</p>
             </div>
             <button type="reset" class="element__urn-button"></button>

@@ -41,7 +41,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
     userInfo.setUserInfo(userData);
     cards.renderItems(initialCards);
   })
-  .catch(console.log);
+  .catch(err => console.log(err));
 
 const handleCardClick = (name, link) => {
   popupBigImage.openPopup(name, link);
@@ -49,35 +49,34 @@ const handleCardClick = (name, link) => {
 const handleCardPopupDelete = (cardId, card) => {
   popupDeleteCard.openPopup(cardId, card);
 }
-
+// const handleToggleLike = (card) => {
+//   api.toggleLike(card.cardId, card.isLiked)
+//       .then(res => {
+//         card.toggleLike(res)
+//       })
+//       .catch(err => console.log(err));
+//  }
 // создание карточки
 function createCard(res) {
-  const card = new Card(userInfo.userId,
-    res,
-    '#card',
-    handleCardClick,
-    handleCardPopupDelete,
-    putLike,
-    deleteLike);
+  const card = new Card(userInfo.userId, res, '#card', handleCardClick, handleCardPopupDelete, handlePutLike, handleDeleteLike);
   const newCard = card.generateCard();
   return newCard;
 }
-console.log(userInfo.userId);
 
-const putLike = (card) => {
-  api.putLike(card.cardId)
+const handlePutLike = (card) => {
+  api.putLike(card.getId())
     .then((res) => {
       card.handlerToggleLike(res)
     })
-    .catch(console.log);
+    .catch(err => console.log(err));
 
 };
-const deleteLike = (card) => {
-  api.deleteLike(card.cardId)
+const handleDeleteLike = (card) => {
+  api.deleteLike(card.getId())
     .then((res) => {
       card.handlerToggleLike(res)
     })
-    .catch(console.log)
+    .catch(err => console.log(err))
 };
 const cards = new Section((res) => {
   cards.addItem(createCard(res))
@@ -94,7 +93,7 @@ const popupNewAvatar = new PopupWitnForm(popupAvatar, ({ avatar }) => {
     .finally(() => {
       popupNewAvatar.renderLoading(false)
     })
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 popupNewAvatar.setEventListeners();
 openButtonAvatar.addEventListener('click', () => {
@@ -113,7 +112,7 @@ const popupInfo = new PopupWitnForm(popupUserInfo, ({ name, about }) => {
       popupInfo.renderLoading(false);
 
     })
-    .catch(console.log);
+    .catch(err => console.log(err));
 });
 openButtonInfo.addEventListener('click', () => {
   popupInfo.openPopup();
@@ -129,7 +128,7 @@ const popupNewImage = new PopupWitnForm(popupNewCard, (card) => {
       popupNewImage.closePopup();
       cards.addItem(createCard(res));
     })
-    .catch(console.log)
+    .catch(err => console.log(err))
     .finally(() => {
       popupNewImage.renderLoading(false)
     });
@@ -147,13 +146,13 @@ const popupDeleteCard = new PopupWithConfirmation(popupDelete, (card) => {
   popupDeleteCard.renderLoading(true);
   api.deleteCard(card.cardId)
     .then(() => {
-     popupDeleteCard.card.remove();
+      popupDeleteCard.card.remove();
       popupDeleteCard.closePopup();
     })
     .finally(() => {
       popupDeleteCard.renderLoading(false)
     })
-    .catch(console.log)
+    .catch(err => console.log(err))
 });
 popupDeleteCard.setEventListeners();
 
